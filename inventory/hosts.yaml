@@ -1,0 +1,65 @@
+---
+R1:
+    hostname: 192.168.65.131
+    groups:
+        - area0
+    data:
+        id: 1
+        nw_advertised: {"0": ["192.1.100.0/24", "1.0.0.0/8"]}
+
+R2:
+    hostname: 192.168.65.132
+    groups:
+        - area0
+    data:
+        id: 2
+        nw_advertised: {"0": ["192.1.100.0/24", "2.0.0.0/8", "192.1.102.0/24"]}
+
+R3:
+    hostname: 192.168.65.133
+    groups:
+        - area0
+    data:
+        id: 3
+        nw_advertised: {"0": ["192.1.100.0/24", "3.0.0.0/8", "192.1.101.0/24"]}
+
+R4:
+    hostname: 192.168.65.134
+    groups:
+        - area0
+    data:
+        id: 4
+        nw_advertised: {"0": ["192.1.101.0/24", "4.0.0.0/8", "192.1.103.0/24"]}
+
+R5:
+    hostname: 192.168.65.135
+    groups:
+        - area0
+    data:
+        id: 5
+        nw_advertised: {"0": ["192.1.102.0/24", "5.0.0.0/8", "192.1.103.0/24"]}
+
+R6:
+    hostname: 192.168.65.136
+    groups:
+        - area0
+    data:
+        id: 6
+        nw_advertised: {"0": ["192.1.101.0/24", "6.0.0.0/8", "192.1.67.0/24"]}
+
+R7:
+    hostname: 192.168.65.137
+    groups:
+        - area0
+        - area10
+    data:
+        id: 7
+        nw_advertised: {"0": ["192.1.67.0/24", "7.0.0.0/8"], "10": ["192.1.78.0/24"]}
+
+R8:
+    hostname: 192.168.65.138
+    groups:
+        - area10
+    data:
+        id: 8
+        nw_advertised: {"10": ["192.1.78.0/24", "8.0.0.0/8"]}

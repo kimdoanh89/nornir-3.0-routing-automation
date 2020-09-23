@@ -1,0 +1,247 @@
+2020-09-22 20:50:25,608 -  nornir.core -     INFO -        run() - Running task 'hello_world' with args {} on 8 hosts
+2020-09-22 21:22:58,644 -  nornir.core -     INFO -        run() - Running task 'hello_world' with args {} on 8 hosts
+2020-09-22 21:22:58,646 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/second_tutorial.py", line 10, in hello_world
+    result=f"{task.host.name} nw_ad {task.host.data.nw_advertise} says hello world!"
+AttributeError: 'dict' object has no attribute 'nw_advertise'
+
+2020-09-22 21:22:58,646 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/second_tutorial.py", line 10, in hello_world
+    result=f"{task.host.name} nw_ad {task.host.data.nw_advertise} says hello world!"
+AttributeError: 'dict' object has no attribute 'nw_advertise'
+
+2020-09-22 21:22:58,647 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/second_tutorial.py", line 10, in hello_world
+    result=f"{task.host.name} nw_ad {task.host.data.nw_advertise} says hello world!"
+AttributeError: 'dict' object has no attribute 'nw_advertise'
+
+2020-09-22 21:22:58,647 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/second_tutorial.py", line 10, in hello_world
+    result=f"{task.host.name} nw_ad {task.host.data.nw_advertise} says hello world!"
+AttributeError: 'dict' object has no attribute 'nw_advertise'
+
+2020-09-22 21:22:58,647 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/second_tutorial.py", line 10, in hello_world
+    result=f"{task.host.name} nw_ad {task.host.data.nw_advertise} says hello world!"
+AttributeError: 'dict' object has no attribute 'nw_advertise'
+
+2020-09-22 21:22:58,648 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/second_tutorial.py", line 10, in hello_world
+    result=f"{task.host.name} nw_ad {task.host.data.nw_advertise} says hello world!"
+AttributeError: 'dict' object has no attribute 'nw_advertise'
+
+2020-09-22 21:22:58,648 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/second_tutorial.py", line 10, in hello_world
+    result=f"{task.host.name} nw_ad {task.host.data.nw_advertise} says hello world!"
+AttributeError: 'dict' object has no attribute 'nw_advertise'
+
+2020-09-22 21:22:58,648 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/second_tutorial.py", line 10, in hello_world
+    result=f"{task.host.name} nw_ad {task.host.data.nw_advertise} says hello world!"
+AttributeError: 'dict' object has no attribute 'nw_advertise'
+
+2020-09-22 21:23:11,669 -  nornir.core -     INFO -        run() - Running task 'hello_world' with args {} on 8 hosts
+2020-09-22 21:23:11,670 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/second_tutorial.py", line 10, in hello_world
+    result=f"{task.host.name} nw_ad {task.host.data.nw_advertised} says hello world!"
+AttributeError: 'dict' object has no attribute 'nw_advertised'
+
+2020-09-22 21:23:11,670 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/second_tutorial.py", line 10, in hello_world
+    result=f"{task.host.name} nw_ad {task.host.data.nw_advertised} says hello world!"
+AttributeError: 'dict' object has no attribute 'nw_advertised'
+
+2020-09-22 21:23:11,671 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/second_tutorial.py", line 10, in hello_world
+    result=f"{task.host.name} nw_ad {task.host.data.nw_advertised} says hello world!"
+AttributeError: 'dict' object has no attribute 'nw_advertised'
+
+2020-09-22 21:23:11,671 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/second_tutorial.py", line 10, in hello_world
+    result=f"{task.host.name} nw_ad {task.host.data.nw_advertised} says hello world!"
+AttributeError: 'dict' object has no attribute 'nw_advertised'
+
+2020-09-22 21:23:11,671 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/second_tutorial.py", line 10, in hello_world
+    result=f"{task.host.name} nw_ad {task.host.data.nw_advertised} says hello world!"
+AttributeError: 'dict' object has no attribute 'nw_advertised'
+
+2020-09-22 21:23:11,671 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/second_tutorial.py", line 10, in hello_world
+    result=f"{task.host.name} nw_ad {task.host.data.nw_advertised} says hello world!"
+AttributeError: 'dict' object has no attribute 'nw_advertised'
+
+2020-09-22 21:23:11,671 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/second_tutorial.py", line 10, in hello_world
+    result=f"{task.host.name} nw_ad {task.host.data.nw_advertised} says hello world!"
+AttributeError: 'dict' object has no attribute 'nw_advertised'
+
+2020-09-22 21:23:11,671 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/second_tutorial.py", line 10, in hello_world
+    result=f"{task.host.name} nw_ad {task.host.data.nw_advertised} says hello world!"
+AttributeError: 'dict' object has no attribute 'nw_advertised'
+
+2020-09-22 21:23:24,912 -  nornir.core -     INFO -        run() - Running task 'hello_world' with args {} on 8 hosts
+2020-09-22 21:24:34,245 -  nornir.core -     INFO -        run() - Running task 'hello_world' with args {} on 8 hosts
+2020-09-22 21:25:03,459 -  nornir.core -     INFO -        run() - Running task 'hello_world' with args {} on 8 hosts
+2020-09-22 21:25:03,461 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/second_tutorial.py", line 10, in hello_world
+    result=f"{task.host.name} nw_ad {task.host.data[0]} says hello world!"
+KeyError: 0
+
+2020-09-22 21:25:03,461 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/second_tutorial.py", line 10, in hello_world
+    result=f"{task.host.name} nw_ad {task.host.data[0]} says hello world!"
+KeyError: 0
+
+2020-09-22 21:25:03,462 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/second_tutorial.py", line 10, in hello_world
+    result=f"{task.host.name} nw_ad {task.host.data[0]} says hello world!"
+KeyError: 0
+
+2020-09-22 21:25:03,462 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/second_tutorial.py", line 10, in hello_world
+    result=f"{task.host.name} nw_ad {task.host.data[0]} says hello world!"
+KeyError: 0
+
+2020-09-22 21:25:03,462 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/second_tutorial.py", line 10, in hello_world
+    result=f"{task.host.name} nw_ad {task.host.data[0]} says hello world!"
+KeyError: 0
+
+2020-09-22 21:25:03,462 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/second_tutorial.py", line 10, in hello_world
+    result=f"{task.host.name} nw_ad {task.host.data[0]} says hello world!"
+KeyError: 0
+
+2020-09-22 21:25:03,463 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/second_tutorial.py", line 10, in hello_world
+    result=f"{task.host.name} nw_ad {task.host.data[0]} says hello world!"
+KeyError: 0
+
+2020-09-22 21:25:03,463 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/second_tutorial.py", line 10, in hello_world
+    result=f"{task.host.name} nw_ad {task.host.data[0]} says hello world!"
+KeyError: 0
+
+2020-09-22 21:25:11,065 -  nornir.core -     INFO -        run() - Running task 'hello_world' with args {} on 8 hosts
+2020-09-22 21:26:00,662 -  nornir.core -     INFO -        run() - Running task 'hello_world' with args {} on 8 hosts
+2020-09-22 21:33:26,580 -  nornir.core -     INFO -        run() - Running task 'hello_world' with args {} on 8 hosts
+2020-09-22 21:34:12,682 -  nornir.core -     INFO -        run() - Running task 'hello_world' with args {} on 8 hosts
+2020-09-22 21:35:26,086 -  nornir.core -     INFO -        run() - Running task 'hello_world' with args {} on 8 hosts
+2020-09-22 21:36:04,680 -  nornir.core -     INFO -        run() - Running task 'hello_world' with args {} on 8 hosts
+2020-09-22 21:43:10,576 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 8 hosts
+2020-09-22 21:49:39,501 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 1 hosts
+2020-09-22 21:53:00,077 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 1 hosts
+2020-09-22 21:53:00,605 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 31, in netmiko_send_config
+    raise ValueError("Must specify either config_commands or config_file")
+ValueError: Must specify either config_commands or config_file
+
+2020-09-22 21:53:00,606 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/second_tutorial.py", line 17, in ospf_config
+    task.run(netmiko_send_config, command_string="router ospf 1")
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-22 21:53:24,382 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 1 hosts
+2020-09-22 21:56:29,120 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 1 hosts
+2020-09-22 21:58:33,340 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 1 hosts
+2020-09-22 21:58:33,341 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/second_tutorial.py", line 22, in ospf_config
+    ospf_cms = ospf_cms + ospf_cm
+TypeError: can only concatenate list (not "str") to list
+
+2020-09-22 21:59:49,271 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 1 hosts
+2020-09-22 22:00:04,158 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 1 hosts
+2020-09-22 22:13:14,241 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 1 hosts
+2020-09-22 22:13:26,824 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 1 hosts
+2020-09-22 22:16:09,780 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 8 hosts
+2020-09-22 22:16:33,052 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 8 hosts
+2020-09-22 22:16:55,192 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 8 hosts
+2020-09-22 22:24:50,986 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 8 hosts
+2020-09-23 04:48:28,527 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 8 hosts
+2020-09-23 04:49:59,712 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 8 hosts
