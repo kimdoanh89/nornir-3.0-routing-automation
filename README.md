@@ -6,6 +6,10 @@ This public repo contains python code that can be used to automate the OSPF conf
 The environment is pre-configure for setting the OSPF configuration of my local OSPF topology. You can change the hosts, and networks to be advertised in `inventory/hosts.yaml` to automate 
 your OSPF configuraions.
 
+## Topology 
+
+![Alt text](images/00_topology.png)
+
 ### nw_advertised 
 nw_advertised is defined in hosts.yaml as a dictionary of OSPF area keys,
 and list of networks to be advertised in each OSPF area as values.
@@ -44,10 +48,6 @@ nw_advertised: {"0": ["192.1.67.0/24", "7.0.0.0/8"], "10": ["192.1.78.0/24"]}
 ```
 R7 will advertise 2 networks in area 0: `["192.1.67.0/24", "7.0.0.0/8"]`;
 and 1 network in area 10: `["192.1.78.0/24"]`
-
-## Topology 
-
-![Alt text](images/00_topology.png)
 
 
 ## Requirements
