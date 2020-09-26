@@ -98,23 +98,42 @@ The output is as follows:
 
 ### Variables in hosts.yaml
 
+There are some variables to be configured:
+- interfaces: {name: interface ip address, ...}
+- ospf_advertised: { area: [list of networks to be advertised], ...}
+- eigrp_advertised: { autonomous system: [list of networks to be advertised], ...}
+- rip_advertised: [list of networks to be advertised]
+
 ```yaml
-R1:
-    hostname: 192.168.65.141
+R6:
+    hostname: 192.168.65.146
     groups:
-        - area0
-        - eigrp
+        - area20
         - ospf
+        - rip
     data:
         # interfaces: {name: interface ip address, ...}
-        interfaces: {"e0/0": "192.1.12.1/24", "e0/1": "192.1.13.1/24",
-                     "e0/2": "192.1.17.1/24", "e0/3": "192.1.18.1/24",
-                     "lo0": "1.1.1.1/8", "lo11": "11.11.11.11/8"}
-        # eigrp_advertised: { autonomous system: [list of networks to be advertised], ...}
-        eigrp_advertised: {"100": ["192.1.17.0/24", "192.1.18.0/24", "11.0.0.0/8"]}
-        ospf_router_id: 1
+        interfaces: {"e0/0": "192.1.56.6/24", "e0/1": "192.1.69.6/24",
+                     "lo0": "6.6.6.6/8", "lo11": "66.66.66.66/8"}
+        ospf_router_id: 6
         # ospf_advertised: { area: [list of networks to be advertised], ...}
-        ospf_advertised: {"0": ["192.1.12.0/24", "192.1.13.0/24", "1.0.0.0/8"]}
+        ospf_advertised: {"20": ["192.1.56.0/24", "6.0.0.0/8"]}
+        # rip_advertised: [list of networks to be advertised]
+        rip_advertised: ["192.1.69.0", "66.0.0.0"]
+
+R7:
+    hostname: 192.168.65.147
+    groups:
+        - eigrp
+    data:
+        # interfaces: {name: interface ip address, ...}
+        interfaces: {"e0/0": "192.1.17.7/24", "lo0": "7.7.7.7/8",
+                     "lo11": "77.77.77.77/8", "lo201": "207.1.4.1/24",
+                     "lo202": "207.1.5.1/24", "lo203": "207.1.6.1/24",
+                     "lo204": "207.1.7.1/24"
+                    }
+        # eigrp_advertised: { autonomous system: [list of networks to be advertised], ...}
+        eigrp_advertised: {"100": ["0.0.0.0/0"]}
 ```
 
 ### Run

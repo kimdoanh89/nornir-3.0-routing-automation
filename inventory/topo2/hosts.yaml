@@ -73,10 +73,13 @@ R6:
         - ospf
         - rip
     data:
+        # interfaces: {name: interface ip address, ...}
         interfaces: {"e0/0": "192.1.56.6/24", "e0/1": "192.1.69.6/24",
                      "lo0": "6.6.6.6/8", "lo11": "66.66.66.66/8"}
         ospf_router_id: 6
+        # ospf_advertised: { area: [list of networks to be advertised], ...}
         ospf_advertised: {"20": ["192.1.56.0/24", "6.0.0.0/8"]}
+        # rip_advertised: [list of networks to be advertised]
         rip_advertised: ["192.1.69.0", "66.0.0.0"]
 
 R7:
