@@ -1197,3 +1197,436 @@ KeyError: 'interfaces'
 2020-09-25 10:19:28,322 -  nornir.core -     INFO -        run() - Running task 'rip_config' with args {} on 2 hosts
 2020-09-25 10:19:28,695 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R1_config' with args {} on 1 hosts
 2020-09-25 10:19:29,146 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R6_config' with args {} on 1 hosts
+2020-09-26 05:31:13,153 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 8 hosts
+2020-09-26 05:31:16,231 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 918, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/paramiko/client.py", line 368, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.65.133
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 302, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 344, in __init__
+    self._open()
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 349, in _open
+    self.establish_connection()
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 940, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.65.133:22
+
+
+
+2020-09-26 05:31:16,237 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 918, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/paramiko/client.py", line 368, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.65.132
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 302, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 344, in __init__
+    self._open()
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 349, in _open
+    self.establish_connection()
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 940, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.65.132:22
+
+
+
+2020-09-26 05:31:16,245 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 918, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/paramiko/client.py", line 368, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.65.138
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 302, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 344, in __init__
+    self._open()
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 349, in _open
+    self.establish_connection()
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 940, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.65.138:22
+
+
+
+2020-09-26 05:31:16,242 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 918, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/paramiko/client.py", line 368, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.65.137
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 302, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 344, in __init__
+    self._open()
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 349, in _open
+    self.establish_connection()
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 940, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.65.137:22
+
+
+
+2020-09-26 05:31:16,248 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo1/ospf_configure.py", line 30, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 05:31:16,243 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 918, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/paramiko/client.py", line 368, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.65.134
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 302, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 344, in __init__
+    self._open()
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 349, in _open
+    self.establish_connection()
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 940, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.65.134:22
+
+
+
+2020-09-26 05:31:16,250 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo1/ospf_configure.py", line 30, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 05:31:16,245 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 918, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/paramiko/client.py", line 368, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.65.131
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 302, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 344, in __init__
+    self._open()
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 349, in _open
+    self.establish_connection()
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 940, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.65.131:22
+
+
+
+2020-09-26 05:31:16,250 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo1/ospf_configure.py", line 30, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 05:31:16,244 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 918, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/paramiko/client.py", line 368, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.65.135
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 302, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 344, in __init__
+    self._open()
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 349, in _open
+    self.establish_connection()
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 940, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.65.135:22
+
+
+
+2020-09-26 05:31:16,251 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo1/ospf_configure.py", line 30, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 05:31:16,243 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 918, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/paramiko/client.py", line 368, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.65.136
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 302, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 344, in __init__
+    self._open()
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 349, in _open
+    self.establish_connection()
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 940, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.65.136:22
+
+
+
+2020-09-26 05:31:16,252 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo1/ospf_configure.py", line 30, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 05:31:16,248 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo1/ospf_configure.py", line 30, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 05:31:16,248 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo1/ospf_configure.py", line 30, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 05:31:16,238 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo1/ospf_configure.py", line 30, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 05:32:36,773 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 8 hosts
+2020-09-26 05:33:55,515 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 8 hosts
+2020-09-26 05:51:59,553 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 10 hosts
+2020-09-26 05:52:03,965 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-26 05:52:04,310 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 7 hosts
+2020-09-26 05:52:05,702 -  nornir.core -     INFO -        run() - Running task 'rip_config' with args {} on 2 hosts
+2020-09-26 05:52:06,108 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R1_config' with args {} on 1 hosts
+2020-09-26 05:52:06,610 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R6_config' with args {} on 1 hosts
