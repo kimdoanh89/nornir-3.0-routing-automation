@@ -1,4 +1,4 @@
-# Nornir-3.0 - Auto OSPF Configuration
+# Nornir-3.0 - Auto Routing Configuration
 
 ## Auto Routing Configuration
 This public repo contains python code that can be used to automate different routing configurations of a network. 
