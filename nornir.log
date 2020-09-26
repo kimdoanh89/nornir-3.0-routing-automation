@@ -245,3 +245,955 @@ TypeError: can only concatenate list (not "str") to list
 2020-09-22 22:24:50,986 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 8 hosts
 2020-09-23 04:48:28,527 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 8 hosts
 2020-09-23 04:49:59,712 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 8 hosts
+2020-09-24 16:03:22,818 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 1 hosts
+2020-09-24 16:03:25,875 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 918, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/paramiko/client.py", line 368, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.65.147
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 302, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 344, in __init__
+    self._open()
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 349, in _open
+    self.establish_connection()
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 940, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.65.147:22
+
+
+
+2020-09-24 16:03:25,876 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 17, in interfaces_config
+    task.run(netmiko_send_config, config_commands=interfaces_cms)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-24 16:04:52,227 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 1 hosts
+2020-09-24 16:06:55,266 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 1 hosts
+2020-09-24 16:10:26,408 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 1 hosts
+2020-09-24 16:11:01,854 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 1 hosts
+2020-09-24 16:11:01,856 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 15, in interfaces_config
+    nw = ipaddress.ip_network(network)
+  File "/home/doanhluong/.pyenv/versions/3.8.5/lib/python3.8/ipaddress.py", line 74, in ip_network
+    return IPv4Network(address, strict)
+  File "/home/doanhluong/.pyenv/versions/3.8.5/lib/python3.8/ipaddress.py", line 1454, in __init__
+    raise ValueError('%s has host bits set' % self)
+ValueError: 192.1.17.7/24 has host bits set
+
+2020-09-24 16:15:36,185 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 1 hosts
+2020-09-24 16:15:36,187 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 15, in interfaces_config
+    interface = ipaddress.IPv4Network(interface)
+  File "/home/doanhluong/.pyenv/versions/3.8.5/lib/python3.8/ipaddress.py", line 1454, in __init__
+    raise ValueError('%s has host bits set' % self)
+ValueError: 192.1.17.7/24 has host bits set
+
+2020-09-24 16:16:23,810 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 1 hosts
+2020-09-24 16:19:12,173 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 1 hosts
+2020-09-24 16:19:12,175 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 15, in interfaces_config
+    interface = ipaddress.IPv4Interface(interface)
+  File "/home/doanhluong/.pyenv/versions/3.8.5/lib/python3.8/ipaddress.py", line 1335, in __init__
+    IPv4Address.__init__(self, addr)
+  File "/home/doanhluong/.pyenv/versions/3.8.5/lib/python3.8/ipaddress.py", line 1252, in __init__
+    self._ip = self._ip_int_from_string(addr_str)
+  File "/home/doanhluong/.pyenv/versions/3.8.5/lib/python3.8/ipaddress.py", line 1144, in _ip_int_from_string
+    raise AddressValueError("Expected 4 octets in %r" % ip_str)
+ipaddress.AddressValueError: Expected 4 octets in 'None'
+
+2020-09-24 16:21:03,595 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 1 hosts
+2020-09-24 16:36:10,858 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 1 hosts
+2020-09-24 16:54:14,228 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 1 hosts
+2020-09-24 16:54:16,242 -  nornir.core -  WARNING -        run() - Task 'eigrp_config' has not been run – 0 hosts selected
+2020-09-24 16:56:09,192 -  nornir.core -  WARNING -        run() - Task 'eigrp_config' has not been run – 0 hosts selected
+2020-09-24 17:05:13,485 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 1 hosts
+2020-09-24 17:05:40,746 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 1 hosts
+2020-09-24 17:06:08,215 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 1 hosts
+2020-09-24 17:06:10,151 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 1 hosts
+2020-09-24 17:14:43,964 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 1 hosts
+2020-09-24 17:15:56,075 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 1 hosts
+2020-09-24 17:16:13,209 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 1 hosts
+2020-09-24 17:17:51,540 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 1 hosts
+2020-09-24 17:17:53,408 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 2 hosts
+2020-09-24 17:20:38,732 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 1 hosts
+2020-09-24 17:20:40,538 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 2 hosts
+2020-09-24 17:31:03,788 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 1 hosts
+2020-09-24 17:31:06,865 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 918, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/paramiko/client.py", line 368, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.65.138
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 302, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 344, in __init__
+    self._open()
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 349, in _open
+    self.establish_connection()
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 940, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.65.138:22
+
+
+
+2020-09-24 17:31:06,865 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 22, in interfaces_config
+    task.run(netmiko_send_config, config_commands=interfaces_cms)
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-24 17:31:06,867 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-24 17:32:05,924 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 1 hosts
+2020-09-24 17:32:07,818 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-24 17:33:43,663 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 1 hosts
+2020-09-24 17:33:45,536 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-24 17:36:52,930 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 1 hosts
+2020-09-24 17:36:54,848 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-24 17:38:24,018 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 1 hosts
+2020-09-24 17:38:25,812 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-24 17:41:29,730 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 8 hosts
+2020-09-24 17:41:29,732 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-24 17:41:29,734 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-24 17:41:29,734 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-24 17:41:29,735 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-24 17:41:29,735 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-24 17:41:31,504 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-25 01:46:52,527 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 8 hosts
+2020-09-25 01:46:52,531 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 01:46:52,531 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 01:46:52,533 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 01:46:52,533 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 01:46:52,534 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 01:46:54,361 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-25 01:46:54,705 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 1 hosts
+2020-09-25 01:47:14,904 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 8 hosts
+2020-09-25 01:47:14,908 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 01:47:14,908 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 01:47:14,909 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 01:47:14,910 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 01:47:14,910 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 01:47:16,826 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-25 01:47:17,178 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 1 hosts
+2020-09-25 01:48:04,343 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 8 hosts
+2020-09-25 01:48:04,349 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 01:48:04,350 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 01:48:04,352 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 01:48:04,352 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 01:48:04,352 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 01:48:06,228 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-25 01:48:06,543 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 1 hosts
+2020-09-25 01:48:32,973 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 8 hosts
+2020-09-25 01:48:32,977 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 01:48:32,977 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 01:48:32,979 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 01:48:32,979 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 01:48:32,979 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 01:48:34,921 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-25 01:48:35,253 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 1 hosts
+2020-09-25 02:10:34,523 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 8 hosts
+2020-09-25 02:10:34,529 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 02:10:34,529 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 02:10:34,531 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 02:10:34,532 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 02:10:36,457 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-25 02:12:02,426 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 8 hosts
+2020-09-25 02:12:02,431 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 02:12:02,432 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 02:12:02,433 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 02:12:02,435 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 02:12:04,392 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-25 02:12:04,720 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 2 hosts
+2020-09-25 02:12:04,721 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 43, in ospf_config
+    nw_advertised = task.host['nw_advertised']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'nw_advertised'
+
+2020-09-25 02:12:04,721 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 43, in ospf_config
+    nw_advertised = task.host['nw_advertised']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'nw_advertised'
+
+2020-09-25 02:12:38,014 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 8 hosts
+2020-09-25 02:12:38,019 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 02:12:38,019 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 02:12:38,020 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 02:12:38,020 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 02:12:39,951 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-25 02:12:40,294 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 2 hosts
+2020-09-25 02:12:40,295 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 44, in ospf_config
+    id = task.host['id']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'id'
+
+2020-09-25 02:12:40,295 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 44, in ospf_config
+    id = task.host['id']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'id'
+
+2020-09-25 02:12:57,533 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 8 hosts
+2020-09-25 02:12:57,539 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 02:12:57,540 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 02:12:57,540 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 02:12:57,540 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 02:12:59,462 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-25 02:12:59,804 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 2 hosts
+2020-09-25 02:15:29,712 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 8 hosts
+2020-09-25 02:15:29,717 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 02:15:29,718 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 02:15:29,719 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 02:15:29,719 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 02:15:31,673 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-25 02:15:32,013 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 2 hosts
+2020-09-25 02:22:33,122 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 8 hosts
+2020-09-25 02:22:33,128 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 02:22:33,128 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 02:22:33,129 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 02:22:33,129 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 02:22:35,066 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-25 02:22:35,405 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 2 hosts
+2020-09-25 02:33:25,332 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 8 hosts
+2020-09-25 02:33:25,337 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 02:33:25,338 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 02:33:25,339 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 02:33:25,341 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 02:33:27,275 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-25 02:33:27,609 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 2 hosts
+2020-09-25 06:53:52,914 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 8 hosts
+2020-09-25 06:53:52,918 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 06:53:52,919 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 06:53:52,919 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 06:53:54,943 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-25 06:53:55,277 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 2 hosts
+2020-09-25 06:54:11,162 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 8 hosts
+2020-09-25 06:54:11,166 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 06:54:11,167 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 06:54:11,168 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 06:54:13,122 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-25 06:54:13,472 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 3 hosts
+2020-09-25 07:07:35,348 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 10 hosts
+2020-09-25 07:07:35,351 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 07:07:35,352 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 07:07:35,352 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 07:07:37,468 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-25 07:07:37,805 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 4 hosts
+2020-09-25 07:20:26,763 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 10 hosts
+2020-09-25 07:20:26,771 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 07:20:26,772 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 07:20:28,948 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-25 07:20:29,291 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 5 hosts
+2020-09-25 07:25:54,492 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 10 hosts
+2020-09-25 07:25:54,499 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "scripts/topo2/configure_interfaces.py", line 10, in interfaces_config
+    interfaces = task.host['interfaces']
+  File "/home/doanhluong/projects/nornir-3.0-ospf-bgp/.venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 296, in __getitem__
+    return self.data[item]
+KeyError: 'interfaces'
+
+2020-09-25 07:25:56,848 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-25 07:25:57,148 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 6 hosts
+2020-09-25 08:38:27,155 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 10 hosts
+2020-09-25 08:38:29,438 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-25 08:38:29,735 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 7 hosts
+2020-09-25 08:40:16,251 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 10 hosts
+2020-09-25 08:40:18,486 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-25 08:40:18,788 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 7 hosts
+2020-09-25 08:51:13,806 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 10 hosts
+2020-09-25 08:51:15,931 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-25 08:51:16,234 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 7 hosts
+2020-09-25 08:51:17,441 -  nornir.core -     INFO -        run() - Running task 'rip_config' with args {} on 2 hosts
+2020-09-25 08:55:18,272 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 10 hosts
+2020-09-25 08:55:20,536 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-25 08:55:20,829 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 7 hosts
+2020-09-25 08:55:22,036 -  nornir.core -     INFO -        run() - Running task 'rip_config' with args {} on 2 hosts
+2020-09-25 09:11:23,411 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 10 hosts
+2020-09-25 09:11:25,573 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-25 09:11:25,876 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 7 hosts
+2020-09-25 09:11:27,082 -  nornir.core -     INFO -        run() - Running task 'rip_config' with args {} on 2 hosts
+2020-09-25 09:11:27,447 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R1_config' with args {} on 1 hosts
+2020-09-25 09:30:32,899 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 10 hosts
+2020-09-25 09:30:35,235 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-25 09:30:35,525 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 7 hosts
+2020-09-25 09:30:36,730 -  nornir.core -     INFO -        run() - Running task 'rip_config' with args {} on 2 hosts
+2020-09-25 09:30:37,091 -  nornir.core -     INFO -        run() - Running task 'redistribute_into_eigrp_config' with args {} on 1 hosts
+2020-09-25 09:30:37,409 -  nornir.core -     INFO -        run() - Running task 'redistribute_into_rip_config' with args {} on 1 hosts
+2020-09-25 09:44:59,660 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 10 hosts
+2020-09-25 09:45:02,099 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-25 09:45:02,392 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 7 hosts
+2020-09-25 09:45:03,594 -  nornir.core -     INFO -        run() - Running task 'rip_config' with args {} on 2 hosts
+2020-09-25 09:45:03,952 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R1_config' with args {} on 1 hosts
+2020-09-25 09:45:04,382 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R6_config' with args {} on 1 hosts
+2020-09-25 10:19:24,545 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 10 hosts
+2020-09-25 10:19:26,810 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-25 10:19:27,116 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 7 hosts
+2020-09-25 10:19:28,322 -  nornir.core -     INFO -        run() - Running task 'rip_config' with args {} on 2 hosts
+2020-09-25 10:19:28,695 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R1_config' with args {} on 1 hosts
+2020-09-25 10:19:29,146 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R6_config' with args {} on 1 hosts
