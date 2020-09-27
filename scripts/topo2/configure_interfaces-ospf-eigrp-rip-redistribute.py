@@ -92,6 +92,16 @@ def route_summarization_at_R6(task):
     task.run(netmiko_send_config, config_commands=summarize_cms)
 
 
+def stub_area_config(task, area: int):
+    stub_cms = ["router ospf 1", f"area {area} stub"]
+    task.run(netmiko_send_config, config_commands=stub_cms)
+
+
+def not_so_stubby_area_config(task, area: int):
+    stub_cms = ["router ospf 1", f"area {area} nssa"]
+    task.run(netmiko_send_config, config_commands=stub_cms)
+
+
 def main():
     nr = InitNornir(config_file="config-topo2.yaml")
     result = nr.run(task=interfaces_config)
@@ -123,6 +133,14 @@ def main():
     # Summarize routes at R6
     nr8 = nr.filter(name="R6")
     result = nr8.run(task=route_summarization_at_R6)
+    print_result(result)
+    # Configure Area 10 as stub-area
+    nr9 = nr.filter(F(groups__contains="area10"))
+    result = nr9.run(task=stub_area_config, area=10)
+    print_result(result)
+    # Configure Area 20 as not-so-stubby-area
+    nr10 = nr.filter(F(groups__contains="area20"))
+    result = nr10.run(task=not_so_stubby_area_config, area=20)
     print_result(result)
 
 

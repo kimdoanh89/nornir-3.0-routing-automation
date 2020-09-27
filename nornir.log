@@ -1670,3 +1670,70 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
 2020-09-26 13:02:57,304 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R6_config' with args {} on 1 hosts
 2020-09-26 13:02:57,672 -  nornir.core -     INFO -        run() - Running task 'route_summarization_at_R1' with args {} on 1 hosts
 2020-09-26 13:02:58,108 -  nornir.core -     INFO -        run() - Running task 'route_summarization_at_R6' with args {} on 1 hosts
+2020-09-26 15:31:03,381 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 10 hosts
+2020-09-26 15:31:05,634 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-26 15:31:06,085 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 7 hosts
+2020-09-26 15:31:07,287 -  nornir.core -     INFO -        run() - Running task 'rip_config' with args {} on 2 hosts
+2020-09-26 15:31:07,652 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R1_config' with args {} on 1 hosts
+2020-09-26 15:31:08,103 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R6_config' with args {} on 1 hosts
+2020-09-26 15:31:08,478 -  nornir.core -     INFO -        run() - Running task 'route_summarization_at_R1' with args {} on 1 hosts
+2020-09-26 15:31:08,885 -  nornir.core -     INFO -        run() - Running task 'route_summarization_at_R6' with args {} on 1 hosts
+2020-09-26 15:31:09,194 -  nornir.core -     INFO -        run() - Running task 'stub_area_config' with args {} on 3 hosts
+2020-09-26 15:35:41,332 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 10 hosts
+2020-09-26 15:35:43,592 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-26 15:35:44,047 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 7 hosts
+2020-09-26 15:35:45,251 -  nornir.core -     INFO -        run() - Running task 'rip_config' with args {} on 2 hosts
+2020-09-26 15:35:45,615 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R1_config' with args {} on 1 hosts
+2020-09-26 15:35:46,053 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R6_config' with args {} on 1 hosts
+2020-09-26 15:35:46,425 -  nornir.core -     INFO -        run() - Running task 'route_summarization_at_R1' with args {} on 1 hosts
+2020-09-26 15:35:46,853 -  nornir.core -     INFO -        run() - Running task 'route_summarization_at_R6' with args {} on 1 hosts
+2020-09-26 15:35:47,172 -  nornir.core -     INFO -        run() - Running task 'stub_area_config' with args {'area': 10} on 3 hosts
+2020-09-26 15:36:01,698 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 10 hosts
+2020-09-26 15:36:03,861 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-26 15:36:04,301 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 7 hosts
+2020-09-26 15:36:05,526 -  nornir.core -     INFO -        run() - Running task 'rip_config' with args {} on 2 hosts
+2020-09-26 15:36:05,893 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R1_config' with args {} on 1 hosts
+2020-09-26 15:36:06,339 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R6_config' with args {} on 1 hosts
+2020-09-26 15:36:06,704 -  nornir.core -     INFO -        run() - Running task 'route_summarization_at_R1' with args {} on 1 hosts
+2020-09-26 15:36:07,138 -  nornir.core -     INFO -        run() - Running task 'route_summarization_at_R6' with args {} on 1 hosts
+2020-09-26 15:36:07,453 -  nornir.core -     INFO -        run() - Running task 'stub_area_config' with args {'area': 10} on 3 hosts
+2020-09-26 16:21:48,680 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 10 hosts
+2020-09-26 16:21:50,922 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-26 16:21:51,379 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 7 hosts
+2020-09-26 16:21:52,577 -  nornir.core -     INFO -        run() - Running task 'rip_config' with args {} on 2 hosts
+2020-09-26 16:21:52,944 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R1_config' with args {} on 1 hosts
+2020-09-26 16:21:53,388 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R6_config' with args {} on 1 hosts
+2020-09-26 16:21:53,752 -  nornir.core -     INFO -        run() - Running task 'route_summarization_at_R1' with args {} on 1 hosts
+2020-09-26 16:21:54,184 -  nornir.core -     INFO -        run() - Running task 'route_summarization_at_R6' with args {} on 1 hosts
+2020-09-26 16:21:54,503 -  nornir.core -     INFO -        run() - Running task 'stub_area_config' with args {'area': 10} on 3 hosts
+2020-09-26 16:21:54,746 -  nornir.core -     INFO -        run() - Running task 'not_so_stubby_area_config' with args {'area': 20} on 3 hosts
+2020-09-26 16:22:10,533 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 10 hosts
+2020-09-26 16:22:12,709 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-26 16:22:13,164 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 7 hosts
+2020-09-26 16:22:14,373 -  nornir.core -     INFO -        run() - Running task 'rip_config' with args {} on 2 hosts
+2020-09-26 16:22:14,738 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R1_config' with args {} on 1 hosts
+2020-09-26 16:22:15,188 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R6_config' with args {} on 1 hosts
+2020-09-26 16:22:15,557 -  nornir.core -     INFO -        run() - Running task 'route_summarization_at_R1' with args {} on 1 hosts
+2020-09-26 16:22:15,979 -  nornir.core -     INFO -        run() - Running task 'route_summarization_at_R6' with args {} on 1 hosts
+2020-09-26 16:22:16,300 -  nornir.core -     INFO -        run() - Running task 'stub_area_config' with args {'area': 10} on 3 hosts
+2020-09-26 16:22:16,546 -  nornir.core -     INFO -        run() - Running task 'not_so_stubby_area_config' with args {'area': 20} on 3 hosts
+2020-09-26 16:22:39,575 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 10 hosts
+2020-09-26 16:22:41,775 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-26 16:22:42,231 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 7 hosts
+2020-09-26 16:22:43,445 -  nornir.core -     INFO -        run() - Running task 'rip_config' with args {} on 2 hosts
+2020-09-26 16:22:43,814 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R1_config' with args {} on 1 hosts
+2020-09-26 16:22:44,270 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R6_config' with args {} on 1 hosts
+2020-09-26 16:22:44,639 -  nornir.core -     INFO -        run() - Running task 'route_summarization_at_R1' with args {} on 1 hosts
+2020-09-26 16:22:45,069 -  nornir.core -     INFO -        run() - Running task 'route_summarization_at_R6' with args {} on 1 hosts
+2020-09-26 16:22:45,385 -  nornir.core -     INFO -        run() - Running task 'stub_area_config' with args {'area': 10} on 3 hosts
+2020-09-26 16:22:45,630 -  nornir.core -     INFO -        run() - Running task 'not_so_stubby_area_config' with args {'area': 20} on 3 hosts
+2020-09-26 16:22:57,672 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 10 hosts
+2020-09-26 16:23:00,017 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-26 16:23:00,471 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 7 hosts
+2020-09-26 16:23:01,683 -  nornir.core -     INFO -        run() - Running task 'rip_config' with args {} on 2 hosts
+2020-09-26 16:23:02,051 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R1_config' with args {} on 1 hosts
+2020-09-26 16:23:02,500 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R6_config' with args {} on 1 hosts
+2020-09-26 16:23:02,867 -  nornir.core -     INFO -        run() - Running task 'route_summarization_at_R1' with args {} on 1 hosts
+2020-09-26 16:23:03,295 -  nornir.core -     INFO -        run() - Running task 'route_summarization_at_R6' with args {} on 1 hosts
+2020-09-26 16:23:03,615 -  nornir.core -     INFO -        run() - Running task 'stub_area_config' with args {'area': 10} on 3 hosts
+2020-09-26 16:23:03,862 -  nornir.core -     INFO -        run() - Running task 'not_so_stubby_area_config' with args {'area': 20} on 3 hosts
